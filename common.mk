@@ -402,3 +402,7 @@ PRODUCT_PACKAGES += \
 
 # Inherit from the proprietary files makefile.
 $(call inherit-product, vendor/realme/sm8250-common/sm8250-common-vendor.mk)
+
+# bitra: Droidspaces needs CONFIG_SYSVIPC / IP6_NF_NAT which the kernel FCM (level 7) forbids.
+# This only disables the OTA-time kernel-config compatibility check.
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := false
